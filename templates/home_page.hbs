@@ -12,6 +12,7 @@
           {{#if ../has_multiple_categories}}
             <li class="blocks-item">
               <a href='{{url}}' class="blocks-item-link">
+                <img src="{{asset 'loader.gif'}}" class="icon blocks-item-icon" data-title="0">
                 <h4 class="blocks-item-title">{{name}}</h4>
                 <p class="blocks-item-description">{{excerpt description}}</p>
               </a>
@@ -70,3 +71,11 @@
     {{/if}}
   </section>
 </div>
+
+<!-- category-icons-->
+<script>
+    $('.icon').each(function (idx, itm){
+        var categoryID = $(this).attr('data-title');
+        $(itm).attr('src', categoryIcons[categoryID]);
+    });
+</script>
