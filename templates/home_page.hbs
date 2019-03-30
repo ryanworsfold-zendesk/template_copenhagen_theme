@@ -76,6 +76,10 @@
 <script>
     $('.icon').each(function (idx, itm){
         var categoryID = $(this).attr('data-title');
-        $(itm).attr('src', categoryIcons[categoryID]);
+        if (categoryIcons[categoryID]) {
+            $(itm).attr('src', categoryIcons[categoryID]);
+        } else {
+            $(itm).attr('src', "{{asset 'default.svg'}}")
+        }
     });
 </script>
